@@ -1,0 +1,9 @@
+API v1 Deprecation and Sunset Announcement
+Architecture Review Board
+Effective Date: December 31, 2026
+
+Notice Details:
+1. Deprecation Schedule: End-of-Life (EOL) announced for REST API v1 endpoints (`/api/v1/customers/*` and `/api/v1/orders/*`).
+2. Migration Target: Consumers must migrate to GraphQL Gateway v2 or gRPC streaming services.
+3. Breaking Changes: Response envelope format flattened, ISO-8601 timestamps enforced across all payload fields.
+4. Brownout Windows: Scheduled 15-minute simulated outages planned on November 15 and November 30 to identify unmigrated clients.

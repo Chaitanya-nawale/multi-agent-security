@@ -1,0 +1,11 @@
+Postmortem Report: Cache Invalidation Outage (INC-8891)
+Incident Commander: Site Reliability Engineering Team
+Severity: SEV-2
+Duration: 42 minutes
+
+Timeline & Root Cause:
+- 14:12 UTC: High cache miss rate observed across Redis cluster after bulk product catalog update.
+- 14:25 UTC: Database CPU spikes to 98% due to stampede effect (thundering herd).
+- 14:40 UTC: Emergency circuit breakers tripped, returning stale cache data while warming primary Redis nodes.
+- 14:54 UTC: Full traffic restored. Root cause identified as improper TTL jitter in the cache invalidation worker pool.
+Action Items: Implement distributed mutex / singleflight pattern on catalog reads and set randomized TTL jitter (+/- 15%).

@@ -1,0 +1,9 @@
+Employee Onboarding Handbook: Technical Guidelines
+People Operations & Engineering Leadership
+Audience: Newly Hired Software Engineers
+
+Key Policies:
+1. Hardware Provisioning: Standard corporate MacBook Pro with encrypted APFS drive and MDM policy enforcement.
+2. Development Workflow: Branch naming convention `feature/<ticket-id>-description`, all PRs require minimum 2 peer reviews and green CI pipeline.
+3. Access Control: Request AWS/GCP and GitHub organization permissions through Okta self-service portal.
+4. Open Source Contributions: Any contribution to external repositories requires prior sign-off from Open Source Program Office (OSPO).

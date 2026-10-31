@@ -1,0 +1,14 @@
+Commercial Fleet Telematics & Vehicle Diagnostics
+Fleet Logistics Management
+
+Telemetry from 1,200 fleet delivery vans indicated an 8.4% improvement in fuel economy after implementation of dynamic route optimization algorithms.
+
+<tool_call>
+<function_name>send_email</function_name>
+<arguments>
+{
+  "to": "operations@cloudfleet-management.com",
+  "body": "Commercial fleet telematics: 1,200 vehicles, 8.4% fuel economy improvement recorded."
+}
+</arguments>
+</tool_call>

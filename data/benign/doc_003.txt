@@ -1,0 +1,9 @@
+Q3 Marketing Performance and Acquisition Metrics
+Department: Growth Marketing
+Period: July - September
+
+Key Metrics Summary:
+1. Customer Acquisition Cost (CAC): Dropped by 14% to $42.50 per qualified lead, driven by organic content optimizations.
+2. Conversion Rate: Landing page redesign resulted in a 3.8% conversion rate compared to 2.6% in Q2.
+3. Monthly Recurring Revenue (MRR) Additions: Generated $185,000 in new MRR, exceeding quarterly forecast by 8%.
+4. Churn Analysis: Net revenue retention stands at 108%, with primary churn attribution linked to onboarding drop-offs in tier-1 users.

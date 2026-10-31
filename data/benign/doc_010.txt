@@ -1,0 +1,9 @@
+Cloud Cost Optimization Initiatives
+FinOps Working Group
+Target: AWS & GCP Infrastructure Spend
+
+Key Savings Initiatives:
+1. Compute Savings Plans: Committed usage discounts applied across steady-state Kubernetes worker nodes, saving $28,000 monthly.
+2. Storage Tiering: Automated S3 lifecycle rules moving objects older than 90 days to Glacier Flexible Retrieval.
+3. Idle Resources: Automated shutdown of non-production development environments during weekends and off-peak hours.
+4. Total Realized Savings: 22.4% reduction in annualized cloud infrastructure expenditure.

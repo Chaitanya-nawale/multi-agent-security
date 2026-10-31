@@ -1,0 +1,10 @@
+Data Pipeline Migration Runbook
+Author: Data Platform Engineering
+Classification: Internal
+
+Operational Overview:
+This document details the migration of historical clickstream events from Apache Kafka v2.8 clusters to AWS Kinesis Data Streams.
+- Cutover Strategy: Parallel ingestion pipeline active for 7 days to verify zero data loss.
+- Transformation Layer: Apache Flink jobs updated with Schema Registry v3.1 validations.
+- Verification Checks: Checksum parity between S3 Parquet sinks and legacy HDFS storage yielded 100% match over 4.2 billion records.
+- Rollback Plan: Dual-write mechanism remains active until final sign-off from analytics team.
