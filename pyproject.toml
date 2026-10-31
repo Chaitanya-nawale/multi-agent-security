@@ -8,6 +8,7 @@ dependencies = [
     "langchain-core",
     "langchain-openai",
     "langfuse>=5.1.0",
+    "langgraph>=1.2.19",
     "python-dotenv>=1.2.4",
 ]
 
