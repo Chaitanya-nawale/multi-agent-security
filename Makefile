@@ -1,4 +1,4 @@
-.PHONY: help install update lint format typecheck test eval eval-worker eval-orchestrator check
+.PHONY: help install update lint format typecheck test eval eval-worker eval-orchestrator check experiments
 
 help:
 	@echo "Available commands:"
@@ -11,6 +11,7 @@ help:
 	@echo "  make eval              - Run full evaluations suite with pytest"
 	@echo "  make eval-worker       - Run Worker agent evaluations directly"
 	@echo "  make eval-orchestrator - Run Orchestrator agent evaluations directly"
+	@echo "  make experiments       - Run multi-scenario prompt injection experiments"
 	@echo "  make check             - Run all quality checks (lint, typecheck, test)"
 
 install:
@@ -42,5 +43,8 @@ eval-worker:
 
 eval-orchestrator:
 	uv run python -m evals.test_eval_orchestrator
+
+experiments:
+	uv run python -m experiments.run_experiments
 
 check: lint typecheck test

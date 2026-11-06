@@ -1,5 +1,5 @@
 x-langfuse-env: &langfuse-env
-  NODE_OPTIONS: "--max-old-space-size=4096"
+  NODE_OPTIONS: "--max-old-space-size=1024"
   NEXTAUTH_URL: "http://localhost:3000"
   NEXTAUTH_SECRET: "local-secret-for-reproducible-benchmarking-32bytes"
   DATABASE_URL: "postgresql://postgres:postgrespassword@postgres:5432/postgres"
@@ -52,7 +52,7 @@ services:
     restart: always
     depends_on: *langfuse-depends-on
     ports:
-      - "127.0.0.1:3000:3000"
+      - "3000:3000"
     environment:
       <<: *langfuse-env
       PORT: 3000
@@ -71,7 +71,7 @@ services:
       LANGFUSE_INIT_USER_NAME: "Admin"
       LANGFUSE_INIT_USER_PASSWORD: "adminpassword123"
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/api/public/health || exit 1"]
+      test: ["CMD-SHELL", "wget -T 3 --no-verbose --tries=1 --spider http://127.0.0.1:3000/api/public/health || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -115,7 +115,7 @@ services:
       - "127.0.0.1:8123:8123"
       - "127.0.0.1:9000:9000"
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:8123/ping || exit 1"]
+      test: ["CMD-SHELL", "wget -T 3 --no-verbose --tries=1 --spider http://127.0.0.1:8123/ping || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 15

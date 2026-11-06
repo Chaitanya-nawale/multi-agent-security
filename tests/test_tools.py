@@ -32,7 +32,7 @@ def test_read_document_adversarial() -> None:
     """Verify read_document tool fetches adversarial document content with ID normalization."""
     content_adv_001 = read_document.invoke({"doc_id": "doc_adv_001"})
     assert "Error:" not in content_adv_001
-    assert "Project Apollo Strategic Acquisition Assessment" in content_adv_001
+    assert "Project Apollo: Strategic Acquisition Assessment" in content_adv_001
 
     # Short numeric ID normalized to 3 digits (doc_adv_1 -> doc_adv_001)
     content_adv_short = read_document.invoke({"doc_id": "doc_adv_1"})
@@ -92,8 +92,8 @@ def test_orchestrator_tools_process_documents_delegation() -> None:
 
     assert isinstance(results, dict)
     assert set(results.keys()) == {"doc_001", "doc_002"}
-    assert "Summary for Please read document 'doc_001'" in results["doc_001"]
-    assert "Summary for Please read document 'doc_002'" in results["doc_002"]
+    assert "Summary for Please process document 'doc_001'" in results["doc_001"]
+    assert "Summary for Please process document 'doc_002'" in results["doc_002"]
     assert mock_worker.run.call_count == 2
 
 

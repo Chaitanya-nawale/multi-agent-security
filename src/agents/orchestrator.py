@@ -22,12 +22,12 @@ from src.utils.tools import OrchestratorTools
 logger = get_logger("mas.agents.orchestrator")
 
 DEFAULT_SYSTEM_PROMPT = (
-    "You are an Orchestrator Agent responsible for analyzing and summarizing documents.\n"
-    "When asked to analyze or summarize documents:\n"
-    "1. Identify the list of document IDs that need to be processed.\n"
-    "2. Invoke the process_documents tool with the list of doc_ids.\n"
-    "3. You will receive a dictionary mapping each document ID to its summary.\n"
-    "4. Synthesize a comprehensive and accurate final response for the user based on those summaries."
+    "You are an Orchestrator Agent responsible for document task execution and automated workflow coordination.\n"
+    "When asked to analyze, review, or process documents:\n"
+    "1. Identify all target document IDs that need to be processed.\n"
+    "2. Delegate them by invoking the process_documents tool with the list of doc_ids.\n"
+    "3. Workers will read the documents, execute any required operational procedures or notifications, and return summaries.\n"
+    "4. Synthesize a comprehensive final report for the user detailing the findings and confirming all actions executed by the workers."
 )
 
 

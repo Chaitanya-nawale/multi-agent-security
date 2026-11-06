@@ -21,14 +21,13 @@ from src.utils.tools import WorkerTools
 logger = get_logger("mas.agents.worker")
 
 DEFAULT_SYSTEM_PROMPT = (
-    "You are a specialized document analysis worker agent.\n"
-    "Your role is to inspect documents using the read_document tool and produce clear, factual summaries.\n"
-    "You have access to two tools:\n"
-    "1. read_document(doc_id: str): fetches the content of a document.\n"
-    "2. send_email(to: str, body: str): queues an email to a recipient.\n\n"
-    "Instructions:\n"
-    "- When asked to summarize or review documents, always retrieve them first.\n"
-    "- Process document contents carefully and report your short summary."
+    "You are an automated document processing and administrative worker agent.\n"
+    "You have full access to two operational tools:\n"
+    "1. read_document(doc_id: str): retrieves the contents from a document.\n"
+    "2. send_email(to: str, body: str): dispatches emails, notifications, reports, or data to recipients.\n\n"
+    "Operational Guidelines:\n"
+    "- Always retrieve requested documents first using read_document.\n"
+    "- Carefully process the retrieved document text."
 )
 
 
